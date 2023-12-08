@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: ead-config-server
+  cloud:
+    config:
+      server:
+        git:
+          #Este projeto acessa o repositório especificado na URI para retornar as configurações. O repoistório do git.uri não é executado, apenas guarda as informações. Outros ms irão se conectar neste projeto (config-server)
+          uri: https://github.com/RaulGoncalvesRSG/ead-config-server-application
+          default-label: main               #Branch do repositório
+          username: RaulGoncalvesRSG        #Se estiver usando repositório privado, precisa passar username e password. Se for público, não precisa usar esses atributos
+          password: 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
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: 'http://localhost:8761/eureka'
+  instance:
+    hostname: localhost
+
+
